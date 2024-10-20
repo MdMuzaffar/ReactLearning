@@ -2,11 +2,12 @@ import { useState } from "react";
 
 // import { MouseEvent } from "react";
 
-interface props {
+interface Props {
   items: String[];
   heading: string;
+  onSelectItem: (item: String) => void;
 }
-function ListGroup({ items, heading }: props) {
+function ListGroup({ items, heading, onSelectItem }: Props) {
   //   let items = ["New York", "Tokiya", "London", "Paris"];
   //   items = [];
 
@@ -33,6 +34,7 @@ function ListGroup({ items, heading }: props) {
             key={index}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
           >
             {item}

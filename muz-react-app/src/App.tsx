@@ -21,26 +21,29 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const renderCount = useRef(0);
 
-  useEffect(() => {
-    renderCount.current += 1;
-  });
+  // useEffect(() => {
+  //   renderCount.current += 1;
+  // });
 
   const handleSelectItem = (item: String) => {
     console.log(item);
   };
 
-  const [data, setData] = useState();
+  const [data, setData] = useState(null);
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts`)
+    fetch(`https://api.github.com/users/moonhighway`)
       .then((response) => response.json())
       .then(setData);
-    // console.log(data);
-  });
+  }, []);
   if (data)
     return (
       <div>
         <div>
-          <GitHubUser name={data} title={data} />
+          <GitHubUser
+            name={data?.name}
+            location={data?.location}
+            avatar={data?.avatar_url}
+          />
         </div>
 
         <ListGroup

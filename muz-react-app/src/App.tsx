@@ -43,6 +43,9 @@ function App() {
             name={data?.name}
             location={data?.location}
             avatar={data?.avatar_url}
+            createdDate={data?.created_at}
+            updatedDate={data?.updated_at}
+            bio={data?.bio}
           />
         </div>
 

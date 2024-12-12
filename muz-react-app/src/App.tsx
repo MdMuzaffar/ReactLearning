@@ -1,9 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+// import { useState, useEffect, useRef } from "react";
 // import Button from "./components/Button";
 // import ListGroup from "./components/ListGroup";
 // import Alert from "./components/alert";
 // import GitHubUser from "./components/GitHubUser";
 // import React, { useState, useEffect, useRef } from "react";
+
+import Button from "./components/Button";
+import Cart from "./components/Cart";
 
 function App() {
   //   return (
@@ -67,6 +70,11 @@ function App() {
     // </div>
     <>
       <h1>Hello React Testing</h1>
+      {/* <Button /> */}
+      <Button text="Home" />
+      <Button text="About Us" />
+      {/* <Button /> */}
+      <Cart />
     </>
   );
 }

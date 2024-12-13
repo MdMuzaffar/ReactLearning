@@ -73,6 +73,8 @@ function App() {
       {/* <Button /> */}
       <Button text="Home" />
       <Button text="About Us" />
+      <Button text="Contact US" />
+      <Button text="Services" />
       {/* <Button /> */}
       <Cart />
     </>

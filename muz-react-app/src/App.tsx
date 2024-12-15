@@ -7,6 +7,7 @@
 
 import Button from "./components/Button";
 import Cart from "./components/Cart";
+import Counter from "./components/Counter";
 
 function App() {
   //   return (
@@ -76,6 +77,7 @@ function App() {
       <Button text="Contact US" />
       <Button text="Services" />
       {/* <Button /> */}
+      <Counter />
       <Cart />
     </>
   );

@@ -8,6 +8,7 @@
 import Button from "./components/Button";
 import Cart from "./components/Cart";
 import Counter from "./components/Counter";
+import { LoginForm } from "./components/LoginForm";
 
 function App() {
   //   return (
@@ -70,6 +71,7 @@ function App() {
     //   </div>
     // </div>
     <>
+      <LoginForm />
       <h1>Hello React Testing</h1>
       {/* <Button /> */}
       <Button text="Home" />

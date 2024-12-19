@@ -9,6 +9,7 @@ import Button from "./components/Button";
 import Cart from "./components/Cart";
 import Counter from "./components/Counter";
 import { LoginForm } from "./components/LoginForm";
+import WelcomeMessage from "./components/WelcomeMessage";
 
 function App() {
   //   return (
@@ -71,6 +72,10 @@ function App() {
     //   </div>
     // </div>
     <>
+      <WelcomeMessage
+        user={{ name: "Muzaffar Ahmed", role: "moderator" }}
+        isLoggedIn={true}
+      />
       <LoginForm />
       <h1>Hello React Testing</h1>
       {/* <Button /> */}

@@ -10,6 +10,7 @@ import Cart from "./components/Cart";
 import Counter from "./components/Counter";
 import { LoginForm } from "./components/LoginForm";
 import WelcomeMessage from "./components/WelcomeMessage";
+import PostPage from "./PostPage";
 
 function App() {
   //   return (
@@ -72,13 +73,13 @@ function App() {
     //   </div>
     // </div>
     <>
+      <PostPage />
       <WelcomeMessage
         user={{ name: "Muzaffar Ahmed", role: "moderator" }}
         isLoggedIn={true}
       />
       <LoginForm />
       <h1>Hello React Testing</h1>
-      {/* <Button /> */}
       <Button text="Home" />
       <Button text="About Us" />
       <Button text="Contact US" />

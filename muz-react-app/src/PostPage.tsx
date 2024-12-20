@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Post = {
   userId: number;
@@ -16,11 +16,15 @@ const PostPage = () => {
     setPost(jsonData);
     console.log(jsonData);
   };
+
+  useEffect(() => {
+    handleClick();
+  }, []);
   return (
     <div>
       <section>
         <h1>PostPage</h1>
-        <button onClick={handleClick}>Click Me</button>
+        {/* <button onClick={handleClick}>Click Me</button> */}
         {posts.map((responseData, id) => {
           return (
             <div key={id}>

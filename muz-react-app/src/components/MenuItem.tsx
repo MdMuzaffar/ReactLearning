@@ -1,15 +1,17 @@
-const Pro = {
+import { FC } from "react";
+
+type Product = {
   item: {
-    name: String,
-    quantity: Number,
-  },
+    name: string;
+    quantity: number;
+  };
 };
 
-const MenuItem = (props: Pro) => {
+const MenuItem: FC<Product> = ({ item }) => {
   return (
     <li>
-      <h2>{props.item.name}</h2>
-      <span>{props.item.quantity}</span>
+      <h2>{item.name}</h2>
+      <span>{item.quantity}</span>
     </li>
   );
 };

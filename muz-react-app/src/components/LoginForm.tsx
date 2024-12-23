@@ -1,4 +1,5 @@
 import { SyntheticEvent, useState } from "react";
+import Button from "./Button";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ export const LoginForm = () => {
         value={password}
         placeholder="Enter you password"
       ></input>
-      <button>Sbmit</button>
+      <Button text="Submit Form" />
     </form>
   );
 };

@@ -9,7 +9,14 @@ export const LoginForm = () => {
     ev.preventDefault();
     const target = ev.target as HTMLFormElement;
     console.log(target, { email, password });
+    clearForm();
   };
+
+  const clearForm = () => {
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <form onSubmit={submitForm}>
       <input

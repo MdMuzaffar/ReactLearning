@@ -73,20 +73,19 @@ function App() {
     //   </div>
     // </div>
     <>
-      <PostPage />
+      {/* <PostPage />
       <WelcomeMessage
         user={{ name: "Muzaffar Ahmed", role: "moderator" }}
         isLoggedIn={true}
-      />
+      /> */}
       <LoginForm />
       <h1>Hello React Testing</h1>
-      <Button text="Home" />
+      {/* <Button text="Home" />
       <Button text="About Us" />
       <Button text="Contact US" />
       <Button text="Services" />
-      {/* <Button /> */}
       <Counter />
-      <Cart />
+      <Cart /> */}
     </>
   );
 }

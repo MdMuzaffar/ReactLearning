@@ -9,6 +9,7 @@ import Button from "./components/Button";
 import Cart from "./components/Cart";
 import Counter from "./components/Counter";
 import { LoginForm } from "./components/LoginForm";
+import Todos from "./components/Todos";
 import WelcomeMessage from "./components/WelcomeMessage";
 import PostPage from "./PostPage";
 
@@ -73,6 +74,7 @@ function App() {
     //   </div>
     // </div>
     <>
+      <Todos />
       {/* <PostPage />
       <WelcomeMessage
         user={{ name: "Muzaffar Ahmed", role: "moderator" }}

@@ -5,6 +5,7 @@
 // import GitHubUser from "./components/GitHubUser";
 // import React, { useState, useEffect, useRef } from "react";
 
+import { useEffect, useState } from "react";
 import Button from "./components/Button";
 import Cart from "./components/Cart";
 import Counter from "./components/Counter";
@@ -12,6 +13,8 @@ import { LoginForm } from "./components/LoginForm";
 import Todos from "./components/Todos";
 import WelcomeMessage from "./components/WelcomeMessage";
 import PostPage from "./PostPage";
+import { getTodos } from "./API/Todos/Todos-api";
+import { Todo } from "./components/types";
 
 function App() {
   //   return (
@@ -44,6 +47,15 @@ function App() {
   //     .then(setData);
   // }, []);
   // if (data)
+
+  const [todos, setTodos] = useState<Todo[]>([]);
+  useEffect(() => {
+    getTodos().then((todosFromServer) => {
+      console.log(todosFromServer);
+      setTodos(todosFromServer);
+    });
+  }, []);
+
   return (
     // <div>
     //   <div>

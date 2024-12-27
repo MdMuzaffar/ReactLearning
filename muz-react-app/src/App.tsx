@@ -49,12 +49,39 @@ function App() {
   // if (data)
 
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [finishedCount, setFinishedCount] = useState(0);
   useEffect(() => {
     getTodos().then((todosFromServer) => {
       console.log(todosFromServer);
       setTodos(todosFromServer);
+      setTimeout(() => {
+        setTodos((todos) => {
+          return todos.map((item, index) => {
+            if (index === 0) {
+              return {
+                ...item,
+                completed: true,
+              };
+            }
+            return item;
+          });
+        });
+      }, 6000);
     });
   }, []);
+
+  useEffect(() => {
+    const count = todos.filter((todo) => todo.completed).length;
+    setFinishedCount(count);
+  }, [todos]);
+
+  const deleteNote = (noteId: number) => {
+    setTodos(
+      todos.filter((noteItem) => {
+        return noteItem.id !== noteId;
+      })
+    );
+  };
 
   return (
     // <div>
@@ -86,7 +113,10 @@ function App() {
     //   </div>
     // </div>
     <>
-      <Todos />
+      <p>
+        Set Finished Count = <span>{finishedCount}</span>
+      </p>
+      <Todos deletNote={deleteNote} todosArray={todos} />
       {/* <PostPage />
       <WelcomeMessage
         user={{ name: "Muzaffar Ahmed", role: "moderator" }}

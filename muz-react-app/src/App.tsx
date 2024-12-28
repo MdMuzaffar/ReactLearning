@@ -15,6 +15,7 @@ import WelcomeMessage from "./components/WelcomeMessage";
 import PostPage from "./PostPage";
 import { getTodos } from "./API/Todos/Todos-api";
 import { Todo } from "./components/types";
+import { AppContext } from "./AppContext";
 
 function App() {
   //   return (
@@ -113,6 +114,11 @@ function App() {
     //   </div>
     // </div>
     <>
+    <AppContext.Provider value={{
+      note : todos,
+      deleteNote
+    }
+    }>
       <p>
         Set Finished Count = <span>{finishedCount}</span>
       </p>
@@ -130,6 +136,7 @@ function App() {
       <Button text="Services" />
       <Counter />
       <Cart /> */}
+      </AppContext>
     </>
   );
 }

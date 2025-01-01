@@ -16,6 +16,7 @@ import PostPage from "./PostPage";
 import { getTodos } from "./API/Todos/Todos-api";
 import { Todo } from "./components/types";
 import { AppContext } from "./AppContext";
+import useFetch from "./hooks/useFetch";
 
 function App() {
   //   return (
@@ -48,6 +49,10 @@ function App() {
   //     .then(setData);
   // }, []);
   // if (data)
+
+  const { data, loading } = useFetch<Todo[]>(
+    "https://jsonplaceholder.typicode.com/todos"
+  );
 
   const [todos, setTodos] = useState<Todo[]>([]);
   const [finishedCount, setFinishedCount] = useState(0);
@@ -84,7 +89,9 @@ function App() {
     );
   };
 
-
+  if (loading) {
+    return <h1> Loading ........... </h1>;
+  }
 
   return (
     // <div>
@@ -116,29 +123,30 @@ function App() {
     //   </div>
     // </div>
     <>
-    <AppContext.Provider value={{
-      note : todos,
-      deleteNote
-    }
-    }>
-      <p>
-        Set Finished Count = <span>{finishedCount}</span>
-      </p>
-      <Todos deletNote={deleteNote} todosArray={todos} />
-      {/* <PostPage />
+      <AppContext.Provider
+        value={{
+          note: data ? data : [],
+          deleteNote,
+        }}
+      >
+        <p>
+          Set Finished Count = <span>{finishedCount}</span>
+        </p>
+        <Todos deletNote={deleteNote} todosArray={todos} />
+        {/* <PostPage />
       <WelcomeMessage
         user={{ name: "Muzaffar Ahmed", role: "moderator" }}
         isLoggedIn={true}
       /> */}
-      <LoginForm />
-      <h1>Hello React Testing</h1>
-      {/* <Button text="Home" />
+        <LoginForm />
+        <h1>Hello React Testing</h1>
+        {/* <Button text="Home" />
       <Button text="About Us" />
       <Button text="Contact US" />
       <Button text="Services" />
       <Counter />
       <Cart /> */}
-      </AppContext>
+      </AppContext.Provider>
     </>
   );
 }

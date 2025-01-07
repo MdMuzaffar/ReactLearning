@@ -17,6 +17,8 @@ import { getTodos } from "./API/Todos/Todos-api";
 import { Todo } from "./components/types";
 import { AppContext } from "./AppContext";
 import useFetch from "./hooks/useFetch";
+import Home from "./components/Home";
+import HomeContaier from "./Container/HomeContaier";
 
 function App() {
   //   return (
@@ -123,30 +125,33 @@ function App() {
     //   </div>
     // </div>
     <>
-      <AppContext.Provider
+      <HomeContaier />
+      <Home />
+
+      {/* <AppContext.Provider
         value={{
           note: data ? data : [],
           deleteNote,
         }}
-      >
-        <p>
-          Set Finished Count = <span>{finishedCount}</span>
-        </p>
-        <Todos deletNote={deleteNote} todosArray={todos} />
-        {/* <PostPage />
+      > */}
+      {/* <p>
+        Set Finished Count = <span>{finishedCount}</span>
+      </p>
+      <Todos deletNote={deleteNote} todosArray={todos} /> */}
+      {/* <PostPage />
       <WelcomeMessage
         user={{ name: "Muzaffar Ahmed", role: "moderator" }}
         isLoggedIn={true}
       /> */}
-        <LoginForm />
-        <h1>Hello React Testing</h1>
-        {/* <Button text="Home" />
+      {/* <LoginForm /> */}
+      {/* <h1>Hello React Testing</h1> */}
+      {/* <Button text="Home" />
       <Button text="About Us" />
       <Button text="Contact US" />
       <Button text="Services" />
       <Counter />
       <Cart /> */}
-      </AppContext.Provider>
+      {/* </AppContext.Provider> */}
     </>
   );
 }

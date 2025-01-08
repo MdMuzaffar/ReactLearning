@@ -1,4 +1,28 @@
+.container{
+    /* width: 60%; */
+}
+
 .main-cart{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    width: 540px;
+    align-items: baseline;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    gap: 4px;
+}
+
+.main-image img{
+    width: 200px;
+    border-radius: 10px;
+}
+.cart-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-image img{
+    width: 50px;
 }

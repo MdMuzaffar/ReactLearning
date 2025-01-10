@@ -1,10 +1,10 @@
 import React from "react";
 
-const addToCart = (data) => {
+import { ADD_TO_CART } from "../constansts";
+
+export const addToCart = (data: any) => {
   return {
-    item: "ADD_TO_CART",
+    type: ADD_TO_CART,
     data: data,
   };
 };
-
-export default addToCart;

@@ -19,6 +19,8 @@ import { AppContext } from "./AppContext";
 import useFetch from "./hooks/useFetch";
 import Home from "./components/Home";
 import HomeContaier from "./Container/HomeContaier";
+import { RouterProvider } from "react-router-dom";
+import appRouter from "./routes/Routes";
 
 function App() {
   //   return (
@@ -125,6 +127,7 @@ function App() {
     //   </div>
     // </div>
     <>
+      <RouterProvider router={appRouter} />
       <HomeContaier />
       <Home />
 
